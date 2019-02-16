@@ -1,0 +1,144 @@
+      <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mentor | E-Genome</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"
+    />
+    <script>function myFun()
+      {
+        var a=document.getElementById("p1").value;
+        var b=document.getElementById("p2").value;
+        if(a.length<5 !! a.length>20)
+        {
+          document.getElementById("m1").innerHTML="**password length should be greater then 5 characters and less then 20 characters"
+          return false;
+        }
+        if(a!=b)
+        {
+          document.getElementById("m2").innerHTML="**passwords do not match"
+          return false;
+        }
+      }</script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="ui text container">
+      <h1
+        style="
+            text-align: center;
+            margin-top: 34px;
+            margin-bottom: 20px;"
+      >
+        <i aria-hidden="true" class="sign-in icon"></i> Registration Portal
+      </h1>
+       
+      <form class="ui form recaptchaForm" action="http://127.0.0.1:8000/mentor_registration/" method="post" onsubmit=" return myFun() ">
+        <fieldset>
+    <legend>Details:</legend>
+        <div class="field">
+          <label>Name</label><input placeholder="name" type="text" name="comp" required/>
+        </div> 
+        <div class="field">
+          <label>Country</label><input placeholder="State" type="text" name="country" required/>
+        </div>
+         <div class="field">
+          <label>Address</label><input placeholder="city" type="text" name="add" required/>
+        </div>
+         <div class="field">
+          <label>Field of Specialization</label>
+           <select name="spcl">
+              <option value="software">software</option>
+              <option value="hardware">hardware</option>
+              <option value="marketing">marketing</option>
+              <option value="finance">finance</option>
+              <option value="other">other</option>
+            </select> 
+        </div>
+         <div class="field">
+          <label>Description</label><input placeholder="description about your company in not more than 1500 words" type="text" name="desc" maxlength="6000"/>
+        </div>
+        <div class="field">
+          <label>
+            Authentication(please upload your company's registration documents)
+        </label></br><input type="file" accept=".pdf" name="file_4"/>
+         
+    Email: <input type="email" name="eml1" required><br>
+    password: <input type="password" name="pwd3" id="p1" value="" required>
+    <span id="m1"></span>
+    confirm password: <input type="password" name="pwd4" id="p2" value="" required>
+    <span id="m2"></span>
+  </fieldset>
+        
+        <div class="field">
+          <div class="ui checkbox">
+            <input
+              type="checkbox"
+              name="cb"
+              tabindex="0"
+            /><label>I agree to the <a href="#">Terms and Conditions</a></label>
+          </div>
+        </div>
+        <div
+          class="g-recaptcha"
+          data-sitekey="6Lcg2YwUAAAAABKvSIYjvbzuBTdqrTIYe2hAzd59"
+        ></div>
+        <div class="ui buttons">
+          <button class="ui primary button" type="submit" href="dashboard.html">Register</button>
+          <div class="or"></div>
+          <button class="ui negative button">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      
+      $(document).ready(funtion(){
+        $(".recaptchaForm").on('submit', function(event){
+          var recaptcha = $(#g-recaptcha-response).val();
+          if(recaptcha === "") {
+            event.preventDefault();
+            alert("Please check Captcha....");
+          }
+          event.preventDefault();
+          $.ajax({
+              url: "https://www.google.com/recaptcha/api/siteverify",
+              type: "post",
+              dataType: 'json',
+              data: {"secret":"6Lcg2YwUAAAAACe6DVEc4H9jrZIiD4BHsV3vbhGf", "response":recaptcha},
+              success: function (data, status) {
+                  var fn = window[successCallback];
+                  fn(data, callbackArgs);
+              },
+              error: function (xhr, desc, err) {
+                 alert("error");
+              },
+          });
+          });
+        });
+      };
+    </script>
+    <script type="text/javascript">
+    $('form').submit(function(){
+
+  var obj = $('form').serializeJSON();
+
+  $.ajax({
+      type: 'POST',
+      url: "http://127.0.0.1:8000/mentor_registration/",
+      dataType: 'json',
+      data: JSON.stringify(obj),
+      contentType : 'application/json',
+      success: function(data) {
+          alert(data)
+      }
+  });
+
+});
+    </script>
+  </body>
+</html>
+

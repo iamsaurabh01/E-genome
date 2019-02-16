@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<link
+  rel="stylesheet"
+  href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"
+/>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<title>DashBoard</title>
+<style>
+	/*FOOTER 1*/
+.footer1 a {
+    color: #DDD;
+}
+
+.footer1 a:hover,
+.footer1 a:focus,
+.footer1 a:active {
+    color: #FFF;
+}
+
+.footer1 .footer {
+    background-color: #2E3436;
+    padding: 35px 0;
+    margin-top: 5em;
+}
+
+.footer1 .footer .footer-desc p {
+    color: #DDD;
+	margin: 15px 0 8px;
+}
+
+.footer1 .footer .social {
+    margin: 0 auto;
+    display: table;
+}
+
+.footer1 .footer .social li {
+    float: left;
+}
+
+.footer1 .footer .social li a {
+	display: block;
+    font-size: 1em;
+    color: #DDD;
+    width: 30px;
+    height: 30px;
+    line-height: 32px;
+    text-align: center;
+    background-color: #222728;
+    border-radius: 2px;
+    margin: 15px 4px
+}
+
+.footer1 .footer .social li a:hover {
+    background-color: #3A4144;
+}
+
+.footer1 .footer .input-group {
+    margin: 15px 0;
+}
+
+.footer1 .footer .form-control {
+    border-radius: 2px 0 0 2px;
+    background-color: #585C5D;
+    border-color: #585C5D;
+    color: #DDD;
+    font-size: 15px;
+}
+
+.footer1 .footer .form-control:hover,
+.footer1 .footer .form-control:focus {
+    border: 1px solid #222728;
+    background-color: #222728;
+}
+
+.footer1 .footer .input-group-addon {
+    border-radius: 0 2px 2px 0;
+    background-color: #F7931D;
+    color: #FFF;
+    border-color: #F7931D;
+    font-size: 15px;
+}
+
+.footer1 .footer-bottom {
+    background-color: #222728;
+    padding: 15px 0;
+    color: #DDD;
+    font-size: 13px;
+}
+
+.footer1 .footer-bottom ul li {
+    display: inline-block;
+}
+
+.footer1 .footer-bottom ul li a {
+    display: block;
+    padding-left: 8px;
+}
+
+.footer1 .footer-bottom ul li a:after {
+    content: "-";
+    padding-left: 8px;
+}
+
+.footer1 .footer-bottom ul li:last-child a:after {
+    content: "";
+}
+
+@media (max-width: 550px) {
+	.footer1 .footer-bottom .pull-left,
+	.footer1 .footer-bottom .pull-right {
+		float: none !important;
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+	}
+}
+
+
+@media (max-width: 550px) {
+    .footer2 .footer-bottom .pull-left,
+	.footer2 .footer-bottom .pull-right {
+		float: none !important;
+		width: 100%;
+		padding: 10px;
+		text-align: center;
+	}
+}
+
+</style>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  	<div class="container-fluid">
+  		<div class="navbar-header">
+  			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+  				<span class="sr-only">toggle-navigation</span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  				<span class="icon-bar"></span>
+  			</button>
+
+  		</div>
+  		<div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <img src="img/logo.png" height="45" width="72">
+  			<ul class="nav navbar-nav navbar-right">
+  				<li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+  				<li><a class="active" href="#"><span class="glyphicon glyphicon-briefcase"></span> About</a></li>
+  				<li><a href="#"><span class="glyphicon glyphicon-book"></span> Services</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> News-feed</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login/Register</a></li>
+  				<li><a href="#"><span class="glyphicon glyphicon-phone"></span> Contact-us</a></li>
+  			</ul>
+  		</div>
+  	</div>
+  </nav>	
+
+
+  <div class="w3-container">
+    <h2>Investors</h2>
+
+    <div class="w3-card-4" style="width:70%">
+      <header class="w3-container w3-light-grey">
+        <h3>Investor 1</h3>
+      </header>
+      <div class="w3-container">
+        <p>1 new friend request</p>
+        <hr>
+        <img src="img_avatar3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+        <p>CEO at Mighty Schools. Marketing and Advertising. Seeking a new job and new opportunities.</p><br>
+      </div>
+      <button class="w3-button w3-block w3-dark-grey">+ Connect</button>
+    </div>
+  </div>
+
+
+<!--FOOTER 1-->
+  <footer class="footer1">
+      <div class="footer">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xs-12">
+                      <div class="footer-desc text-center">
+                          <!-- <img src="http://superdevresources.com/images/super-dev-resources-logo.png" width="82" height="48" alt=""> -->
+                          <p>
+                              <a href="/" rel="home" title="Super Dev Resources">The new idea is always a key to a successful business. If any team working on any new idea is most welcome to this portal to get all abet they required from the connoisseurs on the platform. <a href="/about/">Learn More</a>
+                          </p>
+                      </div>
+                  </div>
+                  <div class="col-xs-12">
+                      <ul class="social">
+                          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                      </ul>
+                  </div>
+
+                  <nav class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                      <div class="input-group input-group-md">
+                        <input type="text" class="form-control" placeholder="Email Address">
+                        <span class="input-group-addon">Subscribe</span>
+                      </div>
+                  </nav>
+              </div> <!--/.row-->
+          </div> <!--/.container-->
+      </div> <!--/.footer-->
+
+      <div class="footer-bottom">
+          <div class="container">
+              <div class="pull-left"> Copyright © <a href="">E-genome</a>.  All right reserved.</div>
+              <div class="pull-right">
+                  <ul>
+                      <li><a href="">Home</a></li>
+                      <li><a href="">About</a></li>
+                      <li><a href="">Services</a></li>
+                      <li><a href="">News-feed</a></li>
+                      <li><a href="">Login/Register</a></li>
+                      <li><a href="">Contact-us</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div> <!--/.footer-bottom-->
+  </footer>
+
+
+</body>
+</html>
