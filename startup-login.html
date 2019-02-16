@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Start-up | E-Genome</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css"
+    />
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="ui text container">
+      <h1>
+        <style class="text-align: center;
+            margin-top: 34px;
+            margin-bottom: 20px"></style>
+      
+        <i aria-hidden="true" class="sign-in icon"></i> Startup login
+      </h1>
+      <form class="ui form recaptchaForm" id="contactForm1" action="http://127.0.0.1:8000/startup_login/" method="post">
+        <div class="field">
+          <label>E-mail</label
+          ><input placeholder="email" type="email" name="eml" required />
+        </div>
+        <div class="field">
+          <label>password</label
+          ><input placeholder="password" type="password" name="pwd1" />
+        </div>
+
+        <div class="field">
+          <div class="ui checkbox">
+            <input type ="checkbox" class="hidden" readonly="" tabindex="0" />
+
+            <label>I agree to the Terms and Conditions</label>
+          </div>
+        </div>
+        <div
+          class="g-recaptcha"
+          data-sitekey="6Lcg2YwUAAAAABKvSIYjvbzuBTdqrTIYe2hAzd59"
+        ></div>
+        <div class="ui buttons">
+          <button class="ui primary button" type="submit" href="dashboard.html">login</button>
+          <div class="or"></div>
+          <button class="ui negative button">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      $(document).ready(funtion(){
+        $(".recaptchaForm").on('submit', function(event){
+          var recaptcha = $(#g-recaptcha-response).val();
+          if(recaptcha === "") {
+            event.preventDefault();
+            alert("Please check Captcha....");
+          }
+          event.preventDefault();
+          $.ajax({
+              url: "https://www.google.com/recaptcha/api/siteverify",
+              type: "post",
+              dataType: 'json',
+              data: {"secret":"6Lcg2YwUAAAAACe6DVEc4H9jrZIiD4BHsV3vbhGf", "response":recaptcha},
+              success: function (data, status) {
+                  var fn = window[successCallback];
+                  fn(data, callbackArgs);
+              },
+              error: function (xhr, desc, err) {
+                 alert("error");
+              },
+          });
+          });
+        });
+    </script>
+
+    <script type="text/javascript">
+    $('form').submit(function(){
+
+  var obj = $('form').serializeJSON();
+
+  $.ajax({
+      type: 'POST',
+      url: 'http://127.0.0.1:8000/startup_login/',
+      dataType: 'json',
+      data: JSON.stringify(obj),
+      contentType : 'application/json',
+      success: function(data) {
+          alert(data)
+      }
+  });
+});
+    </script>
+  </body>
+</html>
+  </body>
+</html>
